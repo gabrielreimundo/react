@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './componentes/imgs/logocfb.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edite <code>src/App.js</code> e salve para recarregar
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-           Aprenda React
-        </a>
-      </header>
-    </div>
-  );
+
+export default function App(){
+  const canal=()=>{
+    return('CFB Cursos')
+  }
+  const curso='Curso de React'
+  return(
+    <section>
+      <p>Canal: {canal() + ' é o melhor'}</p>
+      <p>Curso de react, {curso}</p>
+      <img src={logo}/>
+      <img src='/imgs/gatofelix.jpg'/>
+    </section>
+  )
 }
-
-export default App;
