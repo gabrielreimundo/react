@@ -1,0 +1,21 @@
+*{
+  padding: 10px;
+}
+.texto{
+  color: yellow;
+  font-size: 1em;
+}
+.caixa{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.caixa a{
+  text-decoration: none;
+  color: aliceblue;
+}
+.caixa a:hover {
+  text-decoration: underline;
+  color: blue;
+}
