@@ -1,13 +1,14 @@
-import React from 'react';
-import LedVerde from './componentes/imgs/ledVerde.png'
-import LedVermelho from './componentes/imgs/ledVermelho.png'
+import React,{useState} from 'react';
+import Led from './componentes/Led';
 
 export default function App(){
+
+  const [ligado,setLigado]=useState(false)
+
    return(
     <>
       <h1>CFB</h1>
-      <img style={{width:'50px',margin:'5px'}} alt='' src={LedVermelho}/>
-      <button >Ligar/Desligar</button>
+      <Led ligado={ligado} setLigado={setLigado}/>
     </>
    )
 }
