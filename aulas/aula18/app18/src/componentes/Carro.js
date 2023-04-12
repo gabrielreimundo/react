@@ -10,6 +10,7 @@ export default class Carro extends React.Component{
         }
         this.ld=this.ligarDesligar.bind(this)
     }
+  
     ligarDesligar(){
         //this.state.ligado=true
         //this.setState({ligado:!this.state.ligado})
@@ -25,6 +26,15 @@ export default class Carro extends React.Component{
                 {velAtual:state.velAtual + props.fator}
             )
         )
+    }
+    componentDidMount(){
+        console.log('O carro foi chamado')
+    }
+    componentDidUpdate(){
+        console.log('O carro foi atualizado')
+    }
+    componentWillUnmount(){
+        console.log('O carro foi removido')
     }
     render(){
         return (
