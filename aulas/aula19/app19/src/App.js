@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Globais from './componentes/Globais';
+import Info from './componentes/info';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+export default function App(){
+
+  const [resumo, setResumo]=useState(Globais.resumo)
+
+  const gravarResumo=()=>{
+    Globais.resumo=resumo;
+  }
+  const verResumo=()=>{
+    alert(Globais.resumo)
+  }
+
+  return(
+    <>
+    <Info/>
+      <p>{'Canal: ' + Globais.canal}</p>
+      <p>{'Curso: ' + Globais.curso}</p>
+      <p>{'Ano: ' + Globais.ano}</p>
+      <hr/>
+      <input type='text' size='100' value={resumo} onChange={(e)=>setResumo(e.target.value)}></input>
+      <br/>
+      <button onClick={()=>gravarResumo()}>Gravar Resumo</button>
+      <button onClick={()=>verResumo()}>Ver Resumo</button>
+    </>
   );
 }
-
-export default App;
