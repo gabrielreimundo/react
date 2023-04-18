@@ -44,12 +44,23 @@ const TabelaCarros=(cat)=>{
   )
 }
 
+const pesquisaCategoria=(cat,scat)=>{
+  return(
+    <div>
+      <label>Digite uma categoria</label>
+      <input type='text' value={cat} onChange={(e)=>scat(e.target.value)}/>
+    </div>
+  )
+}
+
 export default function App() {
 
   const [categoria,setCategoria]=useState('')
 
   return (
     <>
+      {pesquisaCategoria(categoria,setCategoria)}
+      <br/>
       {TabelaCarros(categoria)}
     </>
   );
