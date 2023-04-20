@@ -1,0 +1,50 @@
+1. Crie um repositório no Github:
+Acesse sua conta
+Crie um repositório
+2. Instale o gh-pages
+npm install gh-pages --save-dev
+
+3. Insira o "homepage" no package.json
+
+"name": "projeto-react",
+"version": "0.1.0",
+"homepage":"https://{username}.github.io/{nome-do-repositorio}",
+"private": true,
+
+4. Adicione um script
+"scripts": 
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+"start": "react-scripts start",
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build",
+"build": "react-scripts build",
+
+Copie o texto em negrito e cole em package.json
+
+5. Prepare qualquer alteração que você fez nos diretórios para a área de stagin do Git.
+git add .
+
+6. Dê o commit das suas atualizações
+git commit -m “first commit”
+
+7. Reforçe o nome da sua branch
+Git branch -M main
+
+Neste caso estamos chamando a nossa branch atual de "main"
+
+8. Adicione um repositório remoto ao Git local
+git remote add origin https://github.com/{username}/{repo-name}.git
+
+Substitua o link do comando de acordo com as informações do seu repositório.
+
+username é o nome da sua conta do Github
+repo-name é o nome do repositório que você criou
+
+Nesta linha de comando estamos "apelidando" o nosso repositório remoto de "origin"
+
+9. Envie os commits da branch criada do repositório local para o repositório remoto "origin"
+git push -u origin main
+
+10. Dê o deploy da aplicação React
+npm run deploy
