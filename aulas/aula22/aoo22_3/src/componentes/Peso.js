@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default class Classe extends React.Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
     }
     render(){
         return (
