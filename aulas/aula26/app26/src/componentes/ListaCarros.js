@@ -1,17 +1,20 @@
 import React,{useState,useEffect} from 'react';
-import axios from 'axios'
 
 export default function ListaCarros(){
     
     const [carros,setCarros]=useState([])
 
     useEffect(()=>{
-            axios.get('https://carros.gabrielreimundo.repl.co')
-            .then(res=>{
-                const dadosCarros=res.data
-                setCarros(dadosCarros)
-            })
-    })
+
+        fetch('https://carros.gabrielreimundo.repl.co')
+            .then(res=>res.json())
+            .then(
+                (res)=>{
+                    setCarros(res)
+                }
+            )
+        }
+    )
 
     return(           
         <div>
