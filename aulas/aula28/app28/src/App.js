@@ -5,7 +5,7 @@ export default function App() {
   function ListaNumeros(props){
     const num=props.numeros
     const lista_numeros=num.map(
-      (n)=><li key={n}>{n}</li>
+      (n)=><li key={n.toString()}>{n}</li>
     )
     return(<ul>{lista_numeros}</ul>)
   }
